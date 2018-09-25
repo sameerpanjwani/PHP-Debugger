@@ -6,6 +6,8 @@
  * Time: 12:37 PM
  */
 
+namespace Mondovo\Debugger\Contracts;
+
 interface DebuggerInterface
 {
 
