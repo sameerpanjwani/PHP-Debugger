@@ -1,0 +1,38 @@
+{
+    "name": "mondovo/debugger",
+    "description": "To debug the php code in an easiest way",
+    "type": "composer-plugin",
+    "authors": [
+        {
+            "name": "maifoesalam",
+            "email": "maifoes@maximizer-e-services.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "illuminate/config": "~5.0|~5.1|~5.2|~5.3",
+        "illuminate/database": "~5.0|~5.1|~5.2|~5.3",
+        "illuminate/routing": "~5.0|~5.1|~5.2|~5.3",
+        "illuminate/session": "~5.0|~5.1|~5.2|~5.3",
+        "illuminate/support": "~5.0|~5.1|~5.2|~5.3"
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/MondovoDebuggerTest.php"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Mondovo\\Debugger\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mondovo\\Debugger\\MondovoDebuggerServiceProvider"
+            ]
+        },
+        "minimum-stability": "dev",
+        "prefer-stable": true
+    }
+}
