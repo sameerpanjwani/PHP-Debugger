@@ -13,5 +13,7 @@ use Illuminate\Support\Facades\Facade;
 
 class Debugger extends Facade
 {
-    protected static function getFacadeAccessor() { return 'debugger'; }
+    protected static function getFacadeAccessor() {
+        return 'Mondovo\Debugger\Helpers\Debugger';
+    }
 }

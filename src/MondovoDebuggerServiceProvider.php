@@ -23,6 +23,7 @@ class MondovoDebuggerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/config/debugger.php' => \config_path('debugger.php'),
         ], 'config');
+        $this->loadMigrationsFrom(__DIR__.'/Migrations');
     }
     /**
      * Register services.
@@ -32,6 +33,7 @@ class MondovoDebuggerServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/config/debugger.php', 'debugger');
-        $this->app->bind(DebuggerInterface::class, 'Mondovo\DataTable\Debugger');
+        $this->app->bind(DebuggerInterface::class, 'Mondovo\Debugger\Helpers\Debugger');
+
     }
 }
