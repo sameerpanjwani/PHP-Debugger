@@ -14,6 +14,13 @@ class DebuggerLogParentRepository extends Eloquent
 {
     protected $table = 'debugger_log_parent';
 
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     protected $fillable = [
         'created_at'
     ];

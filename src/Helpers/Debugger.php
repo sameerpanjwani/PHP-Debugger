@@ -676,6 +676,10 @@ class Debugger implements DebuggerInterface
         if(!$response && $this->getLastSlackApiError()!="name_taken"){
            throw new \Exception("Channel could not be created");
         }
+
+        if($response->error == 'token_revoked'){
+           throw new \Exception($response->error);
+        }
         //mail_me('maifoes','Debugger error',json_encode($this->getLastSlackApiError()).'-'.json_encode($response));
         if($this->getLastSlackApiError()=="name_taken"){
             $channelId=$channelName;
@@ -740,7 +744,7 @@ class Debugger implements DebuggerInterface
     }
 
     private function sendSlackApiRequest($function,$parameters){
-        $slackUserToken = config('debugger.slack_user_token');
+        $slackUserToken =  config('constants.slack_user_token');
         $parameters['token']=$slackUserToken;
         $parameters['pretty']="1";
         $slackApiUrl = $this->buildUrl($this->slackPreUrl.$function,$parameters);

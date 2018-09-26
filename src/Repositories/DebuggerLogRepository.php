@@ -14,7 +14,12 @@ class DebuggerLogRepository extends Eloquent
 {
     protected $table = 'debugger_log';
 
-    protected $dates = ['deleted_at'];
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     protected $fillable = [
         'message',
