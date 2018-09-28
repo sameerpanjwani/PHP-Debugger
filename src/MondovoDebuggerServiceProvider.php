@@ -9,7 +9,9 @@
 namespace Mondovo\Debugger;
 
 use Illuminate\Support\ServiceProvider;
+use Mondovo\Debugger\Contracts\ActivityLog\ActivityLogDisplayServiceInterface;
 use Mondovo\Debugger\Contracts\DebuggerInterface;
+use Mondovo\Debugger\Contracts\DebuggerLogRepositoryInterface;
 
 class MondovoDebuggerServiceProvider extends ServiceProvider
 {
@@ -34,6 +36,8 @@ class MondovoDebuggerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/debugger.php', 'debugger');
         $this->app->bind(DebuggerInterface::class, 'Mondovo\Debugger\Helpers\Debugger');
+        $this->app->bind(ActivityLogDisplayServiceInterface::class, 'Mondovo\Debugger\Services\Debugger');
+        $this->app->bind(DebuggerLogRepositoryInterface::class, 'Mondovo\Debugger\Repositories\Db\DbDebuggerLogRepository');
 
     }
 }

@@ -9,7 +9,6 @@
 namespace Mondovo\Debugger\Helpers;
 
 use Mondovo\Debugger\Contracts\DebuggerInterface;
-
 use GuzzleHttp\Client;
 use Carbon\Carbon;
 use DB;
