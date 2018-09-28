@@ -56,4 +56,4 @@
         * properties -> set properties, properties can be set as string, object , array
         * subject -> subject is 'optional' if init is set
         * slackchannel -> 'optional' if init is set
-        * slackusername -> 'optional' if init is set 
+        * slackusername -> 'optional' if init is set. 
