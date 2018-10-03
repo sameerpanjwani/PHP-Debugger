@@ -9,7 +9,7 @@
 
 //Route::get('activity_log',['as' => 'activity_log', 'uses' => 'ActivityLogController@index']);
 
-Route::group(['namespace' => 'Mondovo\Debugger\Http\Controllers'], function()
+Route::group(['namespace' => 'Mondovo\Debugger\Controllers'], function()
 {
     Route::get('activity_log', ['uses' => 'ActivityLogController@index']);
 });
