@@ -37,7 +37,7 @@ class MondovoDebuggerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/config/debugger.php', 'debugger');
         $this->app->bind(DebuggerInterface::class, 'Mondovo\Debugger\Helpers\Debugger');
-        $this->app->bind(ActivityLogDisplayServiceInterface::class, 'Mondovo\Debugger\Services\Debugger');
+        $this->app->bind(ActivityLogDisplayServiceInterface::class, 'Mondovo\Debugger\Services\ActivityLogDisplayService');
         $this->app->bind(DebuggerLogRepositoryInterface::class, 'Mondovo\Debugger\Repositories\Db\DbDebuggerLogRepository');
 
     }
