@@ -8,9 +8,13 @@
 
 namespace Mondovo\Debugger\Components;
 
+use Mondovo\DataTable\MyDataTable;
+
 class ActivityLogComponents
 {
     protected $language_path;
+
+    protected $activity_log_list;
 
     public function __construct()
     {
@@ -18,6 +22,8 @@ class ActivityLogComponents
         $this->language_path = [
                                     'activity_log' => 'Debugger Log',
                                 ];
+
+        $this->activity_log_list = \App::make(MyDataTable ::class);
     }
 
     public function getLanguagePath()
@@ -57,15 +63,15 @@ class ActivityLogComponents
             'created_at|data-filter-type:text|min-width:130px',
 
         ];
-        $activity_log_list = $this->getDataTableInstance();
-        $activity_log_list->setTableId('ActivityLog')
+        //$activity_log_list = $this->getDataTableInstance();
+        return $this->setTableId('ActivityLog')
             ->setColumnDefinitionsWithAlias($activity_log_columns, $this->language_path)
             ->setCheckboxColumnsNameInJs('id')
             ->enableFilter()
             ->showExportButton()
             //->enableCopyToClipboardByColumnName()
             ->setAjaxUrl('ajax/activity-log-data');
-        return $activity_log_list;
+        //return $activity_log_list;
     }
 
     public function ajaxForProxyListData($activity_log_list_data)
