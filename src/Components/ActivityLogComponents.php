@@ -14,7 +14,7 @@ class ActivityLogComponents
 
     public function __construct()
     {
-        parent::__construct();
+        /*parent::__construct();*/
         $this->language_path = [
                                     'activity_log' => 'Debugger Log',
                                 ];
