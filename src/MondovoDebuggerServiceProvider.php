@@ -26,6 +26,7 @@ class MondovoDebuggerServiceProvider extends ServiceProvider
             __DIR__.'/config/debugger.php' => \config_path('debugger.php'),
         ], 'config');
         $this->loadMigrationsFrom(__DIR__.'/Migrations');
+        $this->loadRoutesFrom(__DIR__.'/Routes/routes.php');
     }
     /**
      * Register services.
