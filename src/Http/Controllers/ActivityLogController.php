@@ -23,8 +23,8 @@ class ActivityLogController
 
     public function index()
     {
-        $view = $this->activity_log_display_service->getViewData();
         dd('ddd');
+        $view = $this->activity_log_display_service->getViewData();
         $results = array_merge($this->view, $view);
         return view('pages.baf.activity-log', $results);
 
