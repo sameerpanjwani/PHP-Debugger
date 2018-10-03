@@ -25,7 +25,7 @@ class ActivityLogController
     {
         //$view = $this->activity_log_display_service->getViewData();
         //$results = array_merge($this->view, $view);
-        return view('activity-log');
+        return view('pages.baf.activity-log');
 
     }
 
