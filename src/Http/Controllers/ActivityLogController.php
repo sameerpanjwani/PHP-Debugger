@@ -16,7 +16,7 @@ class ActivityLogController
 
     public function __construct(ActivityLogDisplayServiceInterface $activity_log_display_service)
     {
-        parent::__construct();
+        /*parent::__construct();*/
 
         $this->activity_log_display_service = $activity_log_display_service;
     }
