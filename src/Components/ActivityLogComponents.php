@@ -64,8 +64,9 @@ class ActivityLogComponents
 
         ];
         //$activity_log_list = $this->getDataTableInstance();
-        return $this->setTableId('ActivityLog')
-            ->setColumnDefinitionsWithAlias($activity_log_columns, $this->language_path)
+        return $this->activity_log_list->setTableId('ActivityLog')
+            //->setColumnDefinitionsWithAlias($activity_log_columns, $this->language_path)
+            ->setColumnDefinitions($activity_log_columns)
             ->setCheckboxColumnsNameInJs('id')
             ->enableFilter()
             ->showExportButton()

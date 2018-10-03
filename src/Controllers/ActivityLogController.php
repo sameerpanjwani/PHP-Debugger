@@ -24,8 +24,16 @@ class ActivityLogController
     public function index()
     {
         $view = $this->activity_log_display_service->getViewData();
-        $results = array_merge($this->view, $view);
-        return view('pages.baf.activity-log', $results);
+        $view['module_details']['main_module'] = 'daad';
+        $view['module_details']['sub_module'] = 'daad';
+        $view['website_properties']['white-label-logo'] = '';
+        $view['website_properties']['logo'] = '';
+        $view['website_properties']['circle-logo'] = 'daad';
+        $view['admin_user_details']['admin_name'] = '';
+        $view['lang_path'] = '';
+        $view['current_page_url'] = '20';
+        //$results = array_merge($module_details, $view);
+        return view('pages.baf.activity-log', $view);
 
     }
 

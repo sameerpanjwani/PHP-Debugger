@@ -31,7 +31,7 @@ class ActivityLogDisplayService implements ActivityLogDisplayServiceInterface
     }
     public function getViewData(){
         $results = $this->activity_log_components->getComponentData();
-        $results = array_merge($this->view, $results);
+        //$results = array_merge($this->view, $results);
         return $results;
     }
 
