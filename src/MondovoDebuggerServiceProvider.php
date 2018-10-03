@@ -9,7 +9,7 @@
 namespace Mondovo\Debugger;
 
 use Illuminate\Support\ServiceProvider;
-use Mondovo\Debugger\Contracts\ActivityLog\ActivityLogDisplayServiceInterface;
+use Mondovo\Debugger\Contracts\ActivityLogDisplayServiceInterface;
 use Mondovo\Debugger\Contracts\DebuggerInterface;
 use Mondovo\Debugger\Contracts\DebuggerLogRepositoryInterface;
 

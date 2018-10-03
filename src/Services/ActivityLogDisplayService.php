@@ -8,9 +8,11 @@
 
 namespace Mondovo\Debugger\Services;
 
-use Mondovo\Debugger\Components\Baf\ActivityLogComponents;
+
+use Mondovo\Debugger\Components\ActivityLogComponents;
 use Mondovo\Debugger\Contracts\ActivityLogDisplayServiceInterface;
-use Mondovo\Debugger\Repositories\Db\Baf\DbDebuggerLogRepository;
+use Mondovo\Debugger\Repositories\Db\DbDebuggerLogRepository;
+
 
 class ActivityLogDisplayService implements ActivityLogDisplayServiceInterface
 {
