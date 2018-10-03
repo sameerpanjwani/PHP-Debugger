@@ -22,7 +22,7 @@ class ActivityLogDisplayService implements ActivityLogDisplayServiceInterface
 
     public function __construct(ActivityLogComponents $activity_log_components,DbDebuggerLogRepository $log_repository)
     {
-        parent::__construct();
+        /*parent::__construct();*/
 
         $this->activity_log_components = $activity_log_components;
         $this->log_repository = $log_repository;
