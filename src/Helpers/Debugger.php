@@ -743,7 +743,7 @@ class Debugger implements DebuggerInterface
     }
 
     private function sendSlackApiRequest($function,$parameters){
-        $slackUserToken =  config('constants.slack_user_token');
+        $slackUserToken =  config('debugger.slack_user_token');
         $parameters['token']=$slackUserToken;
         $parameters['pretty']="1";
         $slackApiUrl = $this->buildUrl($this->slackPreUrl.$function,$parameters);

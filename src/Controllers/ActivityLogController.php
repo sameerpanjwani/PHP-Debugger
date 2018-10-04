@@ -26,7 +26,7 @@ class ActivityLogController
         $view = $this->activity_log_display_service->getViewData();
         $view['module_details']['main_module'] = 'daad';
         $view['module_details']['sub_module'] = 'daad';
-        $view['website_properties']['white-label-logo'] = '';
+        $view['website_properties']['white-label-logo'] = 'false';
         $view['website_properties']['logo'] = '';
         $view['website_properties']['circle-logo'] = 'daad';
         $view['admin_user_details']['admin_name'] = '';
