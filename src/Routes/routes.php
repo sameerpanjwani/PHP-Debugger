@@ -12,4 +12,6 @@
 Route::group(['namespace' => 'Mondovo\Debugger\Controllers'], function()
 {
     Route::get('activity_log', ['uses' => 'ActivityLogController@index']);
+    Route::post('ajax/activity-log-data', ['as' => 'activity_log_data', 'uses' => 'ActivityLogController@activityLogData']);
+    Route::get('debugger_log_details/{id?}',['as' => 'debugger_log_details', 'uses' => 'ActivityLogController@debuggerLogDetails']);
 });

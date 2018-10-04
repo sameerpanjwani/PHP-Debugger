@@ -64,9 +64,10 @@ class ActivityLogComponents
 
         ];
         //$activity_log_list = $this->getDataTableInstance();
+        $this->language_path = "";
         return $this->activity_log_list->setTableId('ActivityLog')
-            //->setColumnDefinitionsWithAlias($activity_log_columns, $this->language_path)
-            ->setColumnDefinitions($activity_log_columns)
+            ->setColumnDefinitionsWithAlias($activity_log_columns, $this->language_path)
+            //->setColumnDefinitions($activity_log_columns)
             ->setCheckboxColumnsNameInJs('id')
             ->enableFilter()
             ->showExportButton()
@@ -77,8 +78,8 @@ class ActivityLogComponents
 
     public function ajaxForProxyListData($activity_log_list_data)
     {
-        $activity_log_list = $this->getDataTableInstance();
-        return $activity_log_list->disableCache()->of($activity_log_list_data)
+        //$activity_log_list = $this->getDataTableInstance();
+        return $this->activity_log_list->disableCache()->of($activity_log_list_data)
             ->editColumn('status', function ($data) {
                 return $this->editColumnForLiveStatus($data['status']);
             })

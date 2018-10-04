@@ -41,7 +41,7 @@ class ActivityLogDisplayService implements ActivityLogDisplayServiceInterface
     }
 
     public function debuggerLogDetails($id){
-        $debugger_log_details = $this->log_repository->firstDebuggerLogDetails($id);
+        $debugger_log_details = $this->log_repository->debuggerLogDetails($id);
         return $debugger_log_details;
     }
 
