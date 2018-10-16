@@ -141,6 +141,11 @@ class Debugger implements DebuggerInterface
 
     public function __construct()
     {
+        $slackUserToken =  config('debugger.slack_user_token');
+        if($slackUserToken == '' || $slackUserToken == 'undefined' || $slackUserToken == 'null'){
+            throw new \Exception('Please define the SLACK_USER_TOKEN key in your .env file for the Debugger to work.');
+            return false;
+        }
         $dbLoggingDefault = config('debugger.database_logging');
         $this->setDbLogging($dbLoggingDefault);
     }
@@ -518,8 +523,10 @@ class Debugger implements DebuggerInterface
     public function init($defaultSubject,$defaultSlackChannel,$defaultSlackUsername,$defaultDbLogging="")
     {
         $environment_set = config('constants.app_env');
-        if($environment_set != 'production'){
+        $production_environments = config('debugger.production_environments');
+        if(in_array($environment_set, $production_environments)){
             $this->setDisableLogging(false);
+            return false;
         }
         $this->setSubject($defaultSubject);
         $this->setSlackChannel($defaultSlackChannel);
@@ -676,9 +683,9 @@ class Debugger implements DebuggerInterface
            throw new \Exception("Channel could not be created");
         }
 
-        /*if($response->error){
-           throw new \Exception($response->error);
-        }*/
+        if(($response->error != 'token_revoked') || ($response->error != 'name_taken')){
+            throw new \Exception($response->error);
+        }
         //mail_me('maifoes','Debugger error',json_encode($this->getLastSlackApiError()).'-'.json_encode($response));
         if($this->getLastSlackApiError()=="name_taken"){
             $channelId=$channelName;
