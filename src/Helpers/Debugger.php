@@ -676,9 +676,9 @@ class Debugger implements DebuggerInterface
            throw new \Exception("Channel could not be created");
         }
 
-        if($response->error){
+        /*if($response->error){
            throw new \Exception($response->error);
-        }
+        }*/
         //mail_me('maifoes','Debugger error',json_encode($this->getLastSlackApiError()).'-'.json_encode($response));
         if($this->getLastSlackApiError()=="name_taken"){
             $channelId=$channelName;
