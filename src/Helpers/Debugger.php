@@ -672,7 +672,6 @@ class Debugger implements DebuggerInterface
     {
         //$create_channel_url = $this->slackPreUrl."channels.create?token=".$recorder_token."&name=".$channel_name."&pretty=1";
         $response = $this->sendSlackApiRequest("channels.create",["name"=>$channelName]);
-        dd($response);
         if(!$response && $this->getLastSlackApiError()!="name_taken"){
            throw new \Exception("Channel could not be created");
         }
