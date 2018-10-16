@@ -683,7 +683,7 @@ class Debugger implements DebuggerInterface
            throw new \Exception("Channel could not be created");
         }
 
-        if(($response->error != 'token_revoked') || ($response->error != 'name_taken')){
+        if(($response->error == 'token_revoked') || ($response->error != 'name_taken')){
             throw new \Exception($response->error);
         }
         //mail_me('maifoes','Debugger error',json_encode($this->getLastSlackApiError()).'-'.json_encode($response));
