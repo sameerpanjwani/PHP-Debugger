@@ -676,7 +676,7 @@ class Debugger implements DebuggerInterface
            throw new \Exception("Channel could not be created");
         }
 
-        if($response->error == 'token_revoked'){
+        if($response->error){
            throw new \Exception($response->error);
         }
         //mail_me('maifoes','Debugger error',json_encode($this->getLastSlackApiError()).'-'.json_encode($response));
@@ -711,7 +711,7 @@ class Debugger implements DebuggerInterface
         $channelsList = $this->sendSlackApiRequest("channels.list",[]);
         $channelsList = objectToArray($channelsList->channels);
         foreach($channelsList as $channels){
-            if($channels['name'] == $channelName){
+            if($channels['name'] == strtolower($channelName)){
                 $channelId = $channels['id'];
             }
         }
