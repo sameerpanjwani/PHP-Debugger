@@ -525,8 +525,8 @@ class Debugger implements DebuggerInterface
         $environment_set = config('constants.app_env');
         $production_environments = config('debugger.production_environments');
         if(in_array($environment_set, $production_environments)){
-            $this->setDisableLogging(false);
-            return false;
+            /*$this->setDisableLogging(false);
+            return false;*/
         }
         $this->setSubject($defaultSubject);
         $this->setSlackChannel($defaultSlackChannel);
