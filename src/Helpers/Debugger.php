@@ -890,8 +890,8 @@ class Debugger implements DebuggerInterface
 
         //dd($this->debug_args);
         if(!empty($this->debug_args)){
-            $this->function_args = implode(',', $this->debug_args);
-            $this->function_args = json_encode($this->function_args);
+            //$this->function_args = implode(',', $this->debug_args);
+            $this->function_args = json_encode($this->debug_args);
         }else{
             $this->function_args = '';
         }
