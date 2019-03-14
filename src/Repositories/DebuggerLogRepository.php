@@ -43,8 +43,8 @@ class DebuggerLogRepository extends Eloquent
     public function deleteOldLogs()
     {
         $deleteFrequency = config('debugger.delete_frequency');
-        self::whereRaw(PREFIX."created_at < DATE_SUB(NOW(), INTERVAL ".$deleteFrequency." DAY)");
-        DebuggerLogParentRepository::whereRaw(PREFIX."created_at < DATE_SUB(NOW(), INTERVAL ".$deleteFrequency." DAY)");
+        self::whereRaw("created_at < DATE_SUB(NOW(), INTERVAL ".$deleteFrequency." DAY)")->delete();
+        DebuggerLogParentRepository::whereRaw("created_at < DATE_SUB(NOW(), INTERVAL ".$deleteFrequency." DAY)")->delete();
 
     }
 
