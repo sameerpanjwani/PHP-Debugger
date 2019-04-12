@@ -35,7 +35,7 @@ class DbDebuggerLogRepository implements DebuggerLogRepositoryInterface
     public function DebuggerLogDetails($id)
     {
         return DB::table('debugger_log')
-            ->where('id','=',$id);
+            ->where('id','=',$id)->get();
     }
 
 }

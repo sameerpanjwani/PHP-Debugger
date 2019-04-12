@@ -56,7 +56,23 @@ class ActivityLogController
             /*if((($key == 'message') || ($key == 'properties')) && ($value[0] == '{')){
                 dd($value);
             }*/
-            $html = $html.'<tr><td>'.$key.'</td><td>'.$value.'</td>';
+            $html = '<tr><td>'.'id'.'</td><td>'.$value->id.'</td></tr>
+                    <tr><td>'.'message'.'</td><td>'.$value->message.'</td></tr>
+                    <tr><td>'.'subject'.'</td><td>'.$value->subject.'</td></tr>
+                    <tr><td>'.'properties'.'</td><td>'.$value->properties.'</td></tr>
+                    <tr><td>'.'channel_name'.'</td><td>'.$value->channel_name.'</td></tr>
+                    <tr><td>'.'function_name'.'</td><td>'.$value->function_name.'</td></tr>
+                    <tr><td>'.'file_name'.'</td><td>'.$value->file_name.'</td></tr>
+                     <tr><td>'.'class_name'.'</td><td>'.$value->class_name.'</td></tr>
+                      <tr><td>'.'line_no'.'</td><td>'.$value->line_no.'</td></tr>
+                       <tr><td>'.'function_arguments'.'</td><td>'.$value->function_arguments.'</td></tr>
+                        <tr><td>'.'time_from_start'.'</td><td>'.$value->time_from_start.'</td></tr>
+                         <tr><td>'.'time_from_previous'.'</td><td>'.$value->time_from_previous.'</td></tr>
+                          <tr><td>'.'memory_from_start'.'</td><td>'.$value->memory_from_start.'</td></tr>
+                           <tr><td>'.'memory_from_previous'.'</td><td>'.$value->memory_from_previous.'</td></tr>
+                            <tr><td>'.'created_at'.'</td><td>'.$value->created_at.'</td></tr>
+                             <tr><td>'.'log_parent'.'</td><td>'.$value->log_parent.'</td></tr>
+                              <tr><td>'.'step_no'.'</td><td>'.$value->step_no.'</td></tr>';
         }
         $html = '<table><tbody>'.$html.'</tbody></table>';
         return $html;
