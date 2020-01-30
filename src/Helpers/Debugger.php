@@ -753,10 +753,10 @@ class Debugger implements DebuggerInterface
         $slackUserToken =  config('debugger.slack_user_token');
         $parameters['token']=$slackUserToken;
         $parameters['pretty']="1";
-        $slackApiUrl = $this->buildUrl($this->slackPreUrl.$function,$parameters);
+        $slackApiUrl = $this->slackPreUrl.$function;
         //print_r($slackApiUrl)
         $guzzle = \App::make(Client::class);
-        $response = $guzzle->request('POST', $slackApiUrl)->getBody()->getContents();
+        $response = $guzzle->request('POST', $slackApiUrl, ['form_params' => $parameters])->getBody()->getContents();
         $objectResponse = $this->handleJsonOutput($response,"object");
         $this->handleSlackException($objectResponse);
         return $objectResponse;
